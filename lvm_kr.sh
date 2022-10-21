@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo -e "\n"
+echo "한글인터페이스 LVM디스크 마운트스크립트"
+
 fdisk -l
 sleep 5
 
