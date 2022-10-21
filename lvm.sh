@@ -6,9 +6,9 @@ sleep 5
 echo -e "\n"
 echo "#############################################################"
 echo "LVM파티션 생성할 볼륨 이름을 입력해주세요(ex. /dev/nvme2n1, /dev/xvda): "
-read name
+read diskname
 
-(echo n; echo p; echo 1; echo; echo; echo t; echo 8e; echo p; echo w;) | fdisk "$name"
+(echo n; echo p; echo 1; echo; echo; echo t; echo 8e; echo p; echo w;) | fdisk "$diskname"
 sleep 3
 
 echo -e "\n"
@@ -29,12 +29,7 @@ echo "#############################################################"
 echo "생성할 VG명을 입력해 주세요(ex. DataVG, BackupVG): "
 read vgname
 
-echo -e "\n"
-echo "#############################################################"
-echo "vg 생성할 파티션을 입력해 주세요(ex. /dev/nvme1n1p1, /dev/xvda1): "
-read pvname
-
-vgcreate "$vgname" "$pvname"
+vgcreate "$vgname" "$Pname"
 vgdisplay
 
 echo -e "\n"
