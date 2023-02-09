@@ -1,14 +1,14 @@
 #!/bin/bash
 
 #running 상태 전체 ec2 공인 IP조회
-external_ip=$(aws ec2 describe-instances --filters \
+aws ec2 describe-instances --filters \
     "Name=instance-state-name,Values=running" \
-    --output text --query 'Reservations[].Instances[].PublicIpAddress')
+    --output text --query 'Reservations[].Instances[].PublicIpAddress'
 
 # running 상태 전체 ec2 Name 태그 확인 
-ec2_name=$(aws ec2 describe-instances \
+aws ec2 describe-instances \
 --filters "Name=instance-state-name,Values=running" \
-    --query 'Reservations[*].Instances[*].Tags[?Key==`Name`] .Value' --output text)
+    --query 'Reservations[*].Instances[*].Tags[?Key==`Name`] .Value' --output text
 
 # running 상태 전체 ec2 전체 태그 테이블 형식으로 출력 
 aws ec2 describe-instances \
@@ -36,12 +36,12 @@ aws ec2 describe-instances \
 ##########################################################
 
 #전체 ec2 공인 IP조회
-external_ip=$(aws ec2 describe-instances --filters \
-     --output text --query 'Reservations[].Instances[].PublicIpAddress')
+aws ec2 describe-instances --filters \
+     --output text --query 'Reservations[].Instances[].PublicIpAddress'
 
 #전체 ec2 Name 태그 확인 
-ec2_name=$(aws ec2 describe-instances \
-    --query 'Reservations[*].Instances[*].Tags[?Key==`Name`] .Value' --output text)
+aws ec2 describe-instances \
+    --query 'Reservations[*].Instances[*].Tags[?Key==`Name`] .Value' --output text
 
 # running 상태 전체 ec2 Name, 공인 IP 출력
 aws ec2 describe-instances \
