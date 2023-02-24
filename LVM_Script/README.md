@@ -7,3 +7,5 @@ lvm_kr.sh , lvm.sh 파일은 모두 같은 기능을 제공하나 스크립트 �
 
 - lvm_kr.sh<br>
 ![image](https://user-images.githubusercontent.com/31732708/221092867-d1d3e6de-0d42-44c8-8e5b-4af7000d6ffb.png)
+- lvm.sh<br>
+![image](https://user-images.githubusercontent.com/31732708/221093280-3d0ac990-4045-4504-bf8b-0fa2563584c0.png)
